@@ -7,9 +7,9 @@ All credit goes to Andrew for the original code, http://stackoverflow.com/users/
 ### Installation
 If you are using jQuery, then simply just add the file to your `index.html` and you are right to go.
 
-If you are using Angular, then copy the code into a service and make sure to create the `nearestLocation` function on the service's scope like so:
+If you are using Angular, then copy the code into a service and make sure to create the `closestLocation` function on the service's scope like so:
 ```
-this.nearestLocation = nearestLocation;
+this.closestLocation = closestLocation;
 ```
 
 ### How to use
@@ -23,22 +23,22 @@ var locations = [
 ]
 ```
 
-When you've got all three things. Just pass each variable into the `nearestLocation` function like so:
+When you've got all three things. Just pass each variable into the `closestLocation` function like so:
 ```
-nearestLocation(latitude, longitude, locations);
+closestLocation(latitude, longitude, locations);
 ```
 
 Obviously, if you are using Angular it would look something more similiar to this:
 ```
-LocationService.nearestLocation(latitude, longitude, locations);
+LocationService.closestLocation(latitude, longitude, locations);
 ```
 
 The function will return the array that is closest to the latitude and longitude you passed it.
 
 Say you wanted to get just the name of the location that is closest? Easy.
 ```
-// Store the value returned from nearestLocation into a variable
-var closest = nearestLocation(latitude, longitude, locations);
+// Store the value returned from closestLocation into a variable
+var closest = closestLocation(latitude, longitude, locations);
 // Then grab the value at the first index of the array
 closest[0]
 ```
@@ -69,7 +69,7 @@ if (navigator.geolocation) {
     lat = position.coords.longitude;
     
     // in this case I just want the name of the city, so I'm storing the returned value into a variable
-    var usersCity = nearestLocation(lng, lat, cities);
+    var usersCity = closestLocation(lng, lat, cities);
     
     // I want to keep this value for when the user returns to the site or app
     window.localStorage.usersLocation = usersCity[0];

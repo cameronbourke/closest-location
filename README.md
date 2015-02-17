@@ -1,4 +1,4 @@
-# closest-location
+# Closest Location
 
 This is a tiny and simple script created in response to this question, http://stackoverflow.com/questions/21279559/geolocation-closest-locationlat-long-from-my-position
 
@@ -49,6 +49,37 @@ Most people will want to use this code to work out what city etc is closest to a
 
 This can achieved using the `Geolocation API` in broswers these days.
 
+```
+// get our three parameters ready
+var lng,
+    lat,
+    cities = [
+["Sydney",    -33.867487,  151.206990],
+["Melbourne", -28.083627,  -80.608109],
+["Brisbane",  -27.471011,  153.023449],
+["Adelaide",  -34.928621,  138.599959],
+["Perth",     -31.953513,  115.857047]
+];
+
+// HTML5/W3C Geolocation
+if (navigator.geolocation) {
+  // get the users current position
+  navigator.geolocation.getCurrentPosition(function(position) {
+    // store their latitude and longitude into the variables we set up above
+    lng = position.coords.latitude;
+    lat = position.coords.longitude;
+    
+    // in this case I just want the name of the city, so I'm storing the returned value into a variable
+    var usersCity = nearestLocation(lng, lat, cities);
+    
+    // I want to keep this value for when the user returns to the site or app
+    window.localStorage.usersLocation = usersCity[0];
+
+  }, function(error) {
+    // logs the error if we can't get the users current position for some reason
+    console.log(error);
+  });
+}
 ```
 
 

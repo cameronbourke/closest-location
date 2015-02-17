@@ -2,19 +2,18 @@
 
 This is a tiny and simple script created in response to this question, http://stackoverflow.com/questions/21279559/geolocation-closest-locationlat-long-from-my-position
 
-
 All credit goes to Andrew for the original code, http://stackoverflow.com/users/622104/andrew-opengeocode
 
 ### Installation
 If you are using jQuery, then simply just add the file to your `index.html` and you are right to go.
 
-If you are using Angular, then copy the code into a service and make sure to create the `nearestLocation` function on the services scope like so:
+If you are using Angular, then copy the code into a service and make sure to create the `nearestLocation` function on the service's scope like so:
 ```
 this.nearestLocation = nearestLocation;
 ```
 
 ### How to use
-Theres only three things you need to bring to this pool party, a `latitude`, a `longitude` and an `array of arrays` that contain your locations that you want to compare the latitiude and longitiude too.
+There's only three things you need to bring to this pool party, a `latitude`, a `longitude` and an `array of arrays` that contains your locations that you want to compare the latitiude and longitiude too.
 The `array of arrays` must be structed like below:
 ```
 var locations = [
@@ -29,7 +28,7 @@ When you've got all three things. Just pass each variable into the `nearestLocat
 nearestLocation(latitude, longitude, locations);
 ```
 
-Obviously if you are using Angular it would look something more similiar to this:
+Obviously, if you are using Angular it would look something more similiar to this:
 ```
 LocationService.nearestLocation(latitude, longitude, locations);
 ```
@@ -47,7 +46,7 @@ closest[0]
 ### Example
 Most people will want to use this code to work out what city etc is closest to a users location.
 
-This can achieved using the `Geolocation API` in broswers these days.
+This can achieved using the `Geolocation API` in browsers these days.
 
 ```
 // get our three parameters ready

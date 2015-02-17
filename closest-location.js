@@ -29,6 +29,6 @@ function NearestCity(latitude, longitude, locations) {
 
   // return the nearest location
   var closestLocation = (locations[ closest ]);
-  console.log(closestLocation[0]);
-  return closestLocation[0];
+  console.log('The closest location is ' + closestLocation[0]);
+  return closestLocation;
 }

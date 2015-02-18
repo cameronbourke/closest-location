@@ -38,9 +38,9 @@ The function will return the array that is closest to the latitude and longitude
 Say you wanted to get just the name of the location that is closest? Easy.
 ```
 // Store the value returned from closestLocation into a variable
-var closest = closestLocation(latitude, longitude, locations);
+var close = closestLocation(latitude, longitude, locations);
 // Then grab the value at the first index of the array
-closest[0]
+close[0]
 ```
 
 ### Example
